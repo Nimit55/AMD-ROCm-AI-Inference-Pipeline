@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vllm-amd-rocm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vllm
+  template:
+    metadata:
+      labels:
+        app: vllm
+    spec:
+      containers:
+      - name: vllm
+        image: rocm/vllm:latest
+        resources:
+          limits:
+            amd.com/gpu: 1
+        env:
+        - name: MODEL
+          value: Qwen/Qwen2-7B-Instruct
