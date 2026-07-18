@@ -1,4 +1,4 @@
-# AMD ROCm AI Inference Pipeline
+# LLM Inference Pipeline Simulator
 
 > A reference architecture and deployment scaffold for serving LLMs on AMD Instinct GPUs, using ROCm, vLLM, and Kubernetes.
 
